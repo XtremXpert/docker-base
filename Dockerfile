@@ -21,7 +21,7 @@ RUN apt-get update && \
 		pwgen \
 		supervisor \
 		tzdata\
-		unrar \
+#		unrar \
 		unzip \
 		wget \
 	&& \
