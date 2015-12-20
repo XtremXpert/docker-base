@@ -26,7 +26,7 @@ RUN apt-get update && \
 		manpages \
 		mc \
 		nano \
-		ncurse \
+#		ncurse \
 		pwgen \
 		rsync \
 		supervisor \
@@ -36,7 +36,7 @@ RUN apt-get update && \
 		unzip \
 		vim \
 		wget \
-		zlib \
+#		zlib \
 	&& \
 	apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
