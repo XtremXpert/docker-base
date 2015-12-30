@@ -26,14 +26,14 @@ RUN apt-get update && \
 		wget \
 	&& \
 	apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    echo "America/Toronto" > /etc/timezone && \
-    dpkg-reconfigure -f noninteractive tzdata && \
-    echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc  && \
-	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
-	echo "fr_CA.UTF-8 UTF-8" >> /etc/locale.gen && \
-	locale-gen && \
-	update-locale LANG=fr_CA.UTF-8
+	rm -rf /var/lib/apt/lists/* && \
+	echo "America/Toronto" > /etc/timezone && \
+	dpkg-reconfigure -f noninteractive tzdata && \
+##	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+##	echo "fr_CA.UTF-8 UTF-8" >> /etc/locale.gen && \
+##	locale-gen && \
+##	update-locale LANG=fr_CA.UTF-8
+	echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc 
 
 ##	echo -n > /var/lib/apt/extended_states
 CMD ["/bin/bash"]
