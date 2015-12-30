@@ -46,7 +46,7 @@ RUN apt-get update && \
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
 	echo "fr_CA.UTF-8 UTF-8" >> /etc/locale.gen && \
 	locale-gen && \
-	update-locale LANG=fr_CA.UTF-8
+##	update-locale LANG="fr_CA.UTF-8"
 
 ##	echo -n > /var/lib/apt/extended_states
 CMD ["/bin/bash"]
