@@ -1,9 +1,9 @@
 FROM debian:jessie
 
 ENV DEBIAN_FRONTEND="noninteractive" \
-#	LANG="fr_CA.UTF-8" \
-#	LC_ALL="fr_CA.UTF-8" \
-#	LANGUAGE="fr_CA.UTF-8" \
+	LANG="fr_CA.UTF-8" \
+	LC_ALL="fr_CA.UTF-8" \
+	LANGUAGE="fr_CA.UTF-8" \
 	TZ="America/Toronto" \
 	TERM="xterm"
 
