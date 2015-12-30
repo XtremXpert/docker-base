@@ -49,4 +49,5 @@ RUN apt-get update && \
 	update-locale LANG=fr_CA.UTF-8
 
 ##	echo -n > /var/lib/apt/extended_states
-ENTRYPOINT exec /bin/bash
+CMD ["/bin/bash"]
+
