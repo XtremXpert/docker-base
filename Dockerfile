@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
@@ -27,7 +27,7 @@ RUN apt-get update && \
 	&& \
 	apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    echo "Europe/Berlin" > /etc/timezone && \
+    echo "America/Toronto" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
     echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc  && \
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
@@ -36,4 +36,4 @@ RUN apt-get update && \
 	update-locale LANG=fr_CA.UTF-8
 
 ##	echo -n > /var/lib/apt/extended_states
-ENTRYPOINT exec /bin/bash
+CMD ["/bin/bash"]
