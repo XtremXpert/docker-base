@@ -24,7 +24,7 @@ RUN apt-get update && \
 		mc \
 		nano \
 		pwgen \
-		supervisor \
+#		supervisor \
 		tzdata\
 #		unrar \
 		unzip \
