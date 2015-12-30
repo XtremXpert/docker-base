@@ -1,9 +1,6 @@
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND="noninteractive" \
-	LANG="fr_CA.UTF-8" \
-	LC_ALL="fr_CA.UTF-8" \
-	LANGUAGE="fr_CA.UTF-8" \
 	TZ="America/Toronto" \
 	TERM="xterm"
 
@@ -34,6 +31,8 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/* && \
 	echo $TZ > /etc/timezone && \
 	dpkg-reconfigure -f noninteractive tzdata && \
+	locale-gen fr_CA
+	update-locale LANG=fr_CA	
 ##	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
 ##	echo "fr_CA.UTF-8 UTF-8" >> /etc/locale.gen && \
 ##	locale-gen && \
