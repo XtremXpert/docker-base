@@ -29,4 +29,5 @@ RUN apk update && \
 	&& \
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	rm -fr /var/lib/apk/* && \
+	echo PS1='\[\e[0;35m\]AL\[\e[m\] \[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]' > /root/.bashrc && \
 	rm -rf /var/cache/apk/*
