@@ -1,9 +1,9 @@
 FROM debian:jessie
 
 ENV DEBIAN_FRONTEND="noninteractive" \
-#	LANG="fr_CA.UTF-8" \
-#	LC_ALL="fr_CA.UTF-8" \
-#	LANGUAGE="fr_CA.UTF-8" \
+	LANG="fr_CA.UTF-8" \
+	LC_ALL="fr_CA.UTF-8" \
+	LANGUAGE="fr_CA.UTF-8" \
 	TZ="America/Toronto" \
 	TERM="xterm"
 
@@ -39,14 +39,14 @@ RUN apt-get update && \
 #		zlib \
 	&& \
 	apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    echo $TZ > /etc/timezone && \
-    dpkg-reconfigure -f noninteractive tzdata && \
-    echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc  && \
-	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
-	echo "fr_CA.UTF-8 UTF-8" >> /etc/locale.gen && \
-	locale-gen && \
-	update-locale LANG=fr_CA.UTF-8
-
+	rm -rf /var/lib/apt/lists/* && \
+	echo $TZ > /etc/timezone && \
+	dpkg-reconfigure -f noninteractive tzdata && \
+##	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+##	echo "fr_CA.UTF-8 UTF-8" >> /etc/locale.gen && \
+##	locale-gen && \
+##	update-locale LANG="fr_CA.UTF-8" && \
+	echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc 
 ##	echo -n > /var/lib/apt/extended_states
-ENTRYPOINT exec /bin/bash
+CMD ["/bin/bash"]
+
