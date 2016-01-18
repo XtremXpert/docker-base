@@ -1,5 +1,8 @@
 FROM debian:jessie
 
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.11.0.1/s6-overlay-amd64.tar.gz /tmp/
+RUN tar xvzf /tmp/s6-overlay-amd64.tar.gz -C /
+
 ENV DEBIAN_FRONTEND="noninteractive" \
 	LANG="fr_CA.UTF-8" \
 	LC_ALL="fr_CA.UTF-8" \
@@ -48,5 +51,5 @@ RUN apt-get update && \
 ##	update-locale LANG="fr_CA.UTF-8" && \
 	echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc 
 ##	echo -n > /var/lib/apt/extended_states
-CMD ["/bin/bash"]
 
+ENTRYPOINT ["/init"]
