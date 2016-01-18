@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install ---no-install-recommends --no-install-suggests -yqq \
+	apt-get install --no-install-recommends --no-install-suggests -yqq \
 		locales \
 		mc \
 		nano \
